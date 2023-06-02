@@ -1,0 +1,59 @@
+<div class="app" >
+  <header class="header">
+    <h1>{{ title | titlecase}}</h1>
+    <span class="top-currency">
+      <span class="usd">$ {{USDheader}}</span>
+      <span class="eur">€ {{EURheader}}</span>
+    </span>
+  </header>
+  <div class="app-body">
+    <div class="app-selectors">
+      <div class="selectors">
+        <h3>From</h3>
+        <form class="firstValue">
+          <input #from class="input-one" id="input-one" placeholder="100" (focus)="onFocus('From')" value={{FromInputValue}}>
+          <select #c1 class="select1" id="country1" required (change)="changeBase(c1.value)">
+            <option value=""selected disabled hidden>Choose Currency Here..</option>
+            <option value="USD">
+              USD $
+            </option>
+            <option value="EUR">
+              EUR €
+            </option>
+            <option value="GBP">
+              GBP £
+            </option>
+            <option value="UAH">
+              UAH ₴
+            </option>
+          </select>
+        </form>
+        <h3>To</h3>
+        <form class="secondValue">
+          <input #to class="input-two" id="input-two" placeholder="100" (focus)="onFocus('To')" value={{ToInputValue}}>
+          <select #c2 class="select2" id="country2" required (change)="changeToCountry(c2.value)">
+            <option value=""selected disabled hidden>Choose Currency Here..</option>
+            <option value="USD">
+              USD $
+            </option>
+            <option value="EUR">
+              EUR €
+            </option>
+            <option value="GBP">
+              GBP £
+            </option>
+            <option value="UAH">
+              UAH ₴
+            </option>
+          </select>
+        </form>
+      </div>
+      <div class="run" (click)="convert(+from.value, +to.value)">
+        <button class="convert">Convert</button>
+      </div>
+      <div class="result">
+        <p>{{amount}} {{firstCurrnecy}} = {{result}} {{secondCurrnecy}}</p>
+      </div>
+    </div>
+  </div>
+</div>
