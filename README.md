@@ -1,4 +1,4 @@
-# Currency Converter (ITOP1000)
+# Currency Converter 
 Currency converter on Angular.
 API used in project - https://manage.exchangeratesapi.io/dashboard.
 To make it work properly, you have to change API to your own link from the site above!
